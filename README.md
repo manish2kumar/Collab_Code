@@ -53,7 +53,7 @@ Collab Code is a dynamic web application that provides a collaborative real-time
 - Node.js (v14 or higher)
 - npm or yarn
 
-### 🔑 API Keys
+### API Keys
 
 **Google Gemini API Key**:
 1. Go to Google AI Studio and generate a key.
@@ -174,8 +174,3 @@ Here are some screenshots showcasing the application's interface:
 - **AI Code Review in Action**
   ![AI Code Review in Action](https://github.com/manish2kumar/Collab_Code/blob/main/screenshorts/AI%20Code%20Review%20in%20Action.png)
   
-
-- **Collaborative Editor Interface**
-
-
-- **AI Code Review in Action**
