@@ -1,5 +1,4 @@
-
-# Collab Code: Collaborative Editor & AI Code Review
+# Collab Code: Collaborative Editor & AI Code Review 
 
 Collab Code is a dynamic web application that provides a collaborative real-time code editing experience, integrated with an AI-powered code review system. It allows multiple users to work on the same codebase simultaneously and get instant AI feedback on their code quality, best practices, and potential issues.
 
@@ -167,6 +166,13 @@ You can either:
 Here are some screenshots showcasing the application's interface:
 
 - **Join Room Page**
+  ![Join Room Page](https://github.com/manish2kumar/Collab_Code/blob/main/screenshorts/Join%20Room%20Page.png)
+
+- **Collaborative Editor Interface**
+  ![Collaborative Editor Interface](https://github.com/manish2kumar/Collab_Code/blob/main/screenshorts/Collaborative%20Editor%20Interface.png)
+
+- **AI Code Review in Action**
+  ![AI Code Review in Action](https://github.com/manish2kumar/Collab_Code/blob/main/screenshorts/AI%20Code%20Review%20in%20Action.png)
   
 
 - **Collaborative Editor Interface**
