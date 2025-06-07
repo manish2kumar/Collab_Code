@@ -1,0 +1,692 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  /* Modern font */
+  background-color: #f0f2f5;
+  /* Lighter background */
+  color: #333;
+  line-height: 1.6;
+  overflow: hidden;
+  /* Prevent body scroll during animations */
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+
+  from,
+  to {
+    border-right-color: transparent;
+  }
+
+  50% {
+    border-right-color: #ffffff;
+  }
+}
+
+@keyframes pulseFade {
+  0% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+
+  100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+}
+
+
+/* Join Container */
+.join-container {
+  display: flex;
+  flex-direction: column;
+  /* Changed to column to stack text and form */
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+  /* Deeper, techier gradient */
+  padding: 20px;
+  overflow: hidden;
+  color: #e0e0e0;
+  /* Lighter text for dark background */
+}
+
+.join-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: 'Montserrat', sans-serif;
+  /* Another modern font */
+}
+
+.join-header h1 {
+  font-size: 3.5rem;
+  /* Larger and more prominent */
+  color: #8aff8a;
+  /* Vibrant green for tech feel */
+  text-shadow: 0 0 15px rgba(138, 255, 138, 0.6);
+  /* Glow effect */
+  margin-bottom: 0.5rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.animated-text-container {
+  min-height: 2.5rem;
+  /* Reserve space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  /* Sizable animated text */
+  color: #a8dadc;
+  /* Cyan-ish for animated text */
+  font-family: 'Fira Code', monospace;
+  /* Monospaced for tech feel */
+  text-shadow: 0 0 8px rgba(168, 218, 220, 0.4);
+}
+
+.animated-text {
+  overflow: hidden;
+  /* Ensures the typing effect works */
+  white-space: nowrap;
+  /* Keeps text on one line */
+  border-right: 3px solid #ffffff;
+  /* The "caret" */
+  animation: blink-caret 0.75s step-end infinite;
+  display: inline-block;
+}
+
+
+.join-form {
+  background-color: #1a1a2e;
+  /* Darker, sleek background for form */
+  padding: 3rem;
+  /* Increased padding */
+  border-radius: 12px;
+  /* More rounded corners */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(138, 255, 138, 0.1);
+  /* Stronger, diffused shadow with inner glow */
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  /* Max width for better responsiveness */
+  transform: translateY(-20px) perspective(1000px) rotateX(2deg);
+  /* Subtle 3D lift */
+  animation: fadeIn 0.7s ease-out forwards;
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease;
+  /* For hover effect */
+  border: 1px solid rgba(138, 255, 138, 0.2);
+  /* Subtle green border */
+}
+
+.join-form:hover {
+  transform: translateY(-25px) perspective(1000px) rotateX(0deg);
+  /* Lift more on hover */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(138, 255, 138, 0.2);
+}
+
+.join-form h1 {
+  margin-bottom: 2rem;
+  /* More space */
+  font-size: 28px;
+  /* Consistent heading size for form */
+  color: #e0e0e0;
+  /* Lighter color for heading on dark form */
+  font-weight: 700;
+}
+
+.join-form input,
+.join-form button {
+  width: 100%;
+  padding: 14px 18px;
+  /* More padding */
+  margin-bottom: 1.5rem;
+  /* More space */
+  border-radius: 10px;
+  /* More rounded */
+  border: 1px solid #4a4a6e;
+  /* Darker, subtle border */
+  font-size: 17px;
+  font-family: 'Inter', sans-serif;
+  background-color: #2a2a4a;
+  /* Slightly lighter input background */
+  color: #e0e0e0;
+}
+
+.join-form input::placeholder {
+  color: #999;
+}
+
+.join-form input:focus {
+  outline: none;
+  border-color: #8aff8a;
+  /* Highlight on focus with tech green */
+  box-shadow: 0 0 0 4px rgba(138, 255, 138, 0.25);
+  background-color: #3a3a5a;
+  /* Even lighter on focus */
+}
+
+.join-form button {
+  background: linear-gradient(45deg, #8aff8a, #2575fc);
+  /* Gradient for buttons */
+  color: #1a1a2e;
+  /* Dark text for vibrant buttons */
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  font-weight: 700;
+  /* Bolder text */
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(138, 255, 138, 0.4);
+}
+
+.join-form button:hover {
+  background: linear-gradient(45deg, #2575fc, #8aff8a);
+  /* Reverse gradient on hover */
+  transform: translateY(-3px);
+  /* Lift effect on hover */
+  box-shadow: 0 6px 20px rgba(138, 255, 138, 0.6);
+}
+
+.join-form button:active {
+  transform: translateY(0);
+  /* Press down effect */
+  box-shadow: 0 2px 5px rgba(138, 255, 138, 0.2);
+}
+
+/* Editor Container */
+.editor-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: #1e1e2e;
+  /* Dark, sleek background for editor area */
+  color: #f8f8f2;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 280px;
+  background-color: #2a2a3e;
+  /* Darker, professional sidebar background */
+  color: #ecf0f1;
+  padding: 1.5rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  overflow-y: auto;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+  /* Deeper shadow */
+  opacity: 0;
+  /* Hidden initially for animation */
+  animation: slideInFromLeft 0.5s ease-out forwards;
+}
+
+.sidebar h2 {
+  font-size: 19px;
+  margin-bottom: 0.8rem;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.sidebar h3 {
+  font-size: 16px;
+  color: #bdc3c7;
+  margin-top: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1.5rem;
+}
+
+.sidebar li {
+  font-size: 15px;
+  margin: 6px 0;
+  color: #ddd;
+  padding-left: 5px;
+  border-left: 3px solid transparent;
+  transition: border-left 0.2s ease, color 0.2s ease;
+}
+
+.sidebar li:hover {
+  border-left: 3px solid #8aff8a;
+  /* Tech green highlight on hover */
+  color: #ffffff;
+}
+
+.typing-indicator {
+  font-size: 13px;
+  color: #fefcfd;
+  min-height: 20px;
+  animation: pulseFade 2s infinite ease-in-out;
+}
+
+.language-selector {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  background-color: #3a3a5a;
+  /* Darker background for select */
+  color: #ecf0f1;
+  border: 1px solid #5a5a7a;
+  appearance: none;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%3E%3Cpath%20fill%3D%22%23ecf0f1%22%20d%3D%22M208.5%2088.5L128%20169.9L47.5%2088.5L37.5%2098.5L128%20189.9L218.5%2098.5Z%22%2F%3E%3C%2Fsvg%3E');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.language-selector:focus {
+  outline: none;
+  border-color: #8aff8a;
+  /* Tech green highlight */
+  box-shadow: 0 0 0 3px rgba(138, 255, 138, 0.2);
+}
+
+.language-selector option {
+  background-color: #2a2a3e;
+  color: #ecf0f1;
+}
+
+.leave-button,
+.run-btn,
+.code-review-btn {
+  padding: 12px 15px;
+  margin-top: 0.5rem;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.leave-button {
+  background-color: #e74c3c;
+}
+
+.leave-button:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+}
+
+.run-btn {
+  background-color: #8aff8a;
+  /* Tech green for run */
+  color: #1a1a2e;
+  /* Dark text for vibrant button */
+}
+
+.run-btn:hover {
+  background-color: #6ee66e;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(138, 255, 138, 0.4);
+}
+
+.code-review-btn {
+  background-color: #3498db;
+}
+
+.code-review-btn:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(52, 152, 219, 0.3);
+}
+
+.copy-button {
+  padding: 8px 15px;
+  background-color: #5a5a7a;
+  /* Subtle primary color for copy */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  margin-left: 10px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.copy-button:hover {
+  background-color: #4a4a6e;
+  transform: translateY(-1px);
+}
+
+.copy-success {
+  font-size: 12px;
+  color: #8aff8a;
+  /* Green for success message */
+  margin-left: 10px;
+  opacity: 0;
+  animation: fadeInOut 2s ease-out forwards;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Editor */
+.editor-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  overflow: hidden;
+  opacity: 0;
+  /* Hidden initially for animation */
+  animation: fadeIn 0.7s ease-out 0.2s forwards;
+  /* Editor wrapper animation */
+}
+
+.editor-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  /* Deeper shadow for editor */
+}
+
+.console-container {
+  display: flex;
+  gap: 1.5rem;
+  height: 180px;
+  margin-top: 1.5rem;
+}
+
+.input-console,
+.output-console {
+  flex: 1;
+  height: 100%;
+  resize: none;
+  padding: 1rem;
+  border: 1px solid #4a4a6e;
+  /* Darker border */
+  border-radius: 8px;
+  font-family: 'Fira Code', monospace;
+  background-color: #2a2a4a;
+  /* Darker background */
+  color: #f8f8f2;
+  /* Light text */
+  font-size: 14px;
+  line-height: 1.5;
+  overflow-y: auto;
+  box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.3);
+  /* Inner shadow for depth */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-console:focus {
+  outline: none;
+  border-color: #8aff8a;
+  /* Tech green highlight */
+  box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.3), 0 0 0 3px rgba(138, 255, 138, 0.2);
+}
+
+.input-console::placeholder {
+  color: #999;
+}
+
+.output-console {
+  background-color: #1a1a2e;
+  /* Even darker background for output */
+  color: #e0e0e0;
+}
+
+/* Right Panel (Resizable) */
+.right-panel {
+  min-width: 250px;
+  background-color: #1e1e2e;
+  /* Consistent dark background */
+  border-left: 1px solid #4a4a6e;
+  /* Darker border */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  /* Hidden initially for animation */
+  animation: slideInFromRight 0.5s ease-out 0.1s forwards;
+}
+
+.right-panel-content {
+  padding: 1.5rem;
+  overflow-y: auto;
+  height: 100%;
+}
+
+/* --- Sleek Code Review Styling --- */
+.code-review {
+  background-color: #2d2d2d;
+  /* Dark background */
+  color: #f8f8f2;
+  /* Light, readable text */
+  padding: 1.5rem;
+  border-radius: 10px;
+  font-family: 'Fira Code', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  white-space: pre-line;
+  overflow-x: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  /* Deeper, more diffused shadow */
+  animation: fadeInScale 0.6s ease-out;
+  border: 1px solid rgba(138, 255, 138, 0.3);
+  /* Subtle tech-green border */
+  position: relative;
+  /* Needed for pseudo-element positioning */
+  overflow: hidden;
+  /* Ensures pseudo-element doesn't spill */
+}
+
+.code-review::before {
+  content: "Code Review";
+  /* Faded background text */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-15deg);
+  /* Center and slight rotation */
+  font-size: 6rem;
+  /* Large text */
+  font-weight: 900;
+  /* Bold */
+  color: rgba(138, 255, 138, 0.05);
+  /* Very faded tech green */
+  pointer-events: none;
+  /* Make it unclickable */
+  user-select: none;
+  /* Prevent text selection */
+  white-space: nowrap;
+  z-index: 0;
+  /* Behind content */
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+.code-review pre,
+.code-review code {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background-color: transparent;
+  border-radius: 0.7rem;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  padding: 0;
+  position: relative;
+  /* Ensure code is above pseudo-element */
+  z-index: 1;
+  /* Bring code above background text */
+}
+
+.code-review h3 {
+  font-size: 1.8rem;
+  /* Larger heading */
+  color: #8aff8a;
+  /* Tech green heading */
+  margin-bottom: 1.2rem;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(138, 255, 138, 0.1);
+  /* Subtle green separator */
+  padding-bottom: 0.8rem;
+  position: relative;
+  /* Ensure heading is above pseudo-element */
+  z-index: 1;
+}
+
+/* Resize Handle for Right Panel */
+.resize-handle {
+  width: 8px;
+  cursor: col-resize;
+  background-color: #5a5a7a;
+  /* Darker, more integrated handle */
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 1;
+  transition: background-color 0.2s ease;
+}
+
+.resize-handle:hover {
+  background-color: #8aff8a;
+  /* Highlight on hover with tech green */
+}
+
+/* Scrollbar Styling (Webkit) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #2a2a4a;
+  /* Darker track for consistency */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #5a5a7a;
+  /* Darker thumb */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6a6a8a;
+}
+
+/* Specific scrollbar for dark elements */
+.sidebar::-webkit-scrollbar-track,
+.code-review::-webkit-scrollbar-track {
+  background: #1a1a2e;
+}
+
+.sidebar::-webkit-scrollbar-thumb,
+.code-review::-webkit-scrollbar-thumb {
+  background: #3a3a5a;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover,
+.code-review::-webkit-scrollbar-thumb:hover {
+  background: #4a4a6e;
+}
