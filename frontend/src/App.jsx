@@ -7,7 +7,8 @@ import rehypeHighlight from 'rehype-highlight';
 import 'highlight.js/styles/github-dark.css'; // This will provide dark syntax highlighting
 import { v4 as uuid } from "uuid";
 
-const socket = io("http://localhost:5000");
+// const socket = io("http://localhost:5000");
+const socket = io(import.meta.env.VITE_BACKEND_URL);
 
 const App = () => {
   const [joined, setJoined] = useState(false);
