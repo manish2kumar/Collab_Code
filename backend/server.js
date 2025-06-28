@@ -6,8 +6,14 @@ const socketManager = require("./src/sockets/socketManager");
 
 const server = http.createServer(app);
 const io = new Server(server, {
+  // cors: {
+  //   origin: "*",
+  // },
+  // deployment changes
   cors: {
-    origin: "*",
+  origin: "https://collab-code.vercel.app",
+  methods: ["GET", "POST"],
+  credentials: true,
   },
 });
 
