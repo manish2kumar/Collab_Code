@@ -66,7 +66,12 @@ function socketManager(io) {
 
     socket.on("codeReview", async ({ code, language, roomId }) => {
       try {
-        const response = await axios.post("http://localhost:5000/ai/get-review", {
+        // const response = await axios.post("http://localhost:5000/ai/get-review", {
+        //   code,
+        //   language
+        // });
+        // for deployment changes and 
+        const response = await axios.post(`${process.env.BACKEND_URL}/ai/get-review`, {
           code,
           language
         });
