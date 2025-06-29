@@ -8,7 +8,11 @@ import 'highlight.js/styles/github-dark.css'; // This will provide dark syntax h
 import { v4 as uuid } from "uuid";
 
 // const socket = io("http://localhost:5000");
-const socket = io(import.meta.env.VITE_BACKEND_URL);
+// for deployment 
+const socket = io(import.meta.env.VITE_BACKEND_URL, {
+  transports: ['websocket'],
+});
+
 
 const App = () => {
   const [joined, setJoined] = useState(false);
