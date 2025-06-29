@@ -1,5 +1,8 @@
 # Collab Code: Collaborative Editor & AI Code Review 
 
+
+🌐 **Live Demo**: [Click here to try it out](https://collab-code-sooty.vercel.app/)
+
 Collab Code is a dynamic web application that provides a collaborative real-time code editing experience, integrated with an AI-powered code review system. It allows multiple users to work on the same codebase simultaneously and get instant AI feedback on their code quality, best practices, and potential issues.
 
 
@@ -46,6 +49,16 @@ Collab Code is a dynamic web application that provides a collaborative real-time
 - **Google Gemini API**: Powers the AI code review system.
 - **Piston API**: Public API for code execution.
 - **dotenv**: Manages environment variables.
+
+## Deployment & CI/CD
+
+The application is fully deployed and maintained with an automated CI/CD pipeline:
+
+- **Frontend** is deployed on **Vercel**.
+- **Backend** is deployed on **Render**.
+
+Both deployments are integrated with **GitHub CI/CD**, enabling automatic builds and deployments on every push to the main branches. This ensures a seamless and reliable development-to-production workflow with minimal manual intervention.
+  
 
 ## Setup and Installation
 
